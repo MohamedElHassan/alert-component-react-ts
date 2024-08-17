@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BellRing } from "lucide-react";
+import "./App.css";
+import Alert from "./components/ui/Alert/Alert";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="">
+        <Alert
+          type="alert-error"
+          icon={<BellRing />}
+          title="This is warning"
+          description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa sint
+          quidem facilis soluta quae numquam laboriosam expedita magni ratione
+          ea."
+        />
+        <br />
+        <Alert
+          type="alert-default"
+          icon={<BellRing />}
+          title="This is warning"
+          description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa sint
+          quidem facilis soluta quae numquam laboriosam expedita magni ratione
+          ea."
+        />
+        <br />
+
+        <Alert type="alert-default" icon={<BellRing />} title="This is warning">
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+            sunt. <a href="#">Hello this is link</a>
+          </div>
+        </Alert>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
